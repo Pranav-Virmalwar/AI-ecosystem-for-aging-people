@@ -1,0 +1,17 @@
+# Never upload local secrets or non-Next assets to the deployment.
+.env
+.env.*
+.env*.local
+services/
+.claude/
+tests/
+scripts/demo-*.ts
+scripts/redteam.ts
+scripts/serve-guardian.ts
+redteam-report.md
+
+# NOTE: do NOT ignore landing/ here. Vercel applies this repository-root
+# .vercelignore to every project in the repo, including the separate
+# sahaya-landing project (root directory "landing"); ignoring it would strip
+# landing/package.json from that build. The main app's next build ignores the
+# landing/ source on its own, so leaving it uploaded is harmless.
